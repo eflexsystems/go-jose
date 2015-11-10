@@ -272,18 +272,8 @@ func exitOnError(err error, msg string) {
 }
 
 // Read input from file or stdin
-func readInput(path string) []byte {
-	var bytes []byte
-	var err error
-
-	if path != "" {
-		bytes, err = ioutil.ReadFile(path)
-	} else {
-		bytes, err = ioutil.ReadAll(os.Stdin)
-	}
-
-	exitOnError(err, "unable to read input")
-	return bytes
+func readInput(text string) []byte {
+	return []byte(text)
 }
 
 // Write output to file or stdin
